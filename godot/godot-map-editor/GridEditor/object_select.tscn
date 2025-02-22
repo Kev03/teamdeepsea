@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2jd4ce12qb3t"]
+
+[ext_resource type="Script" path="res://GridEditor/object_select.gd" id="1_httdg"]
+[ext_resource type="Texture2D" uid="uid://chno5bk6lktl8" path="res://assets/selection-border-1-selection.png" id="2_677vv"]
+
+[sub_resource type="Gradient" id="Gradient_fag5x"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 0.462745)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0j6eo"]
+gradient = SubResource("Gradient_fag5x")
+
+[node name="ObjectSelect" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_httdg")
+
+[node name="SelectionOverlay" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_0j6eo")
+
+[node name="HoverOverlay" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_677vv")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

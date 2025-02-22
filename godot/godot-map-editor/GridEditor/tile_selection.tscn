@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://sldmpmlt15rm"]
+
+[ext_resource type="Script" path="res://GridEditor/tile_selection.gd" id="1_gewgq"]
+[ext_resource type="PackedScene" uid="uid://d2jd4ce12qb3t" path="res://GridEditor/object_select.tscn" id="1_k1atb"]
+[ext_resource type="Texture2D" uid="uid://cr8mtfcj474tu" path="res://assets/bg-tile-1-selector.png" id="2_qdhfx"]
+[ext_resource type="Texture2D" uid="uid://rh03nksyedj3" path="res://assets/bg-tile-2-selector.png" id="3_i5ghq"]
+
+[node name="TileSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gewgq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(300, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+columns = 3
+
+[node name="ObjectSelect" parent="ScrollContainer/GridContainer" instance=ExtResource("1_k1atb")]
+layout_mode = 2
+texture_normal = ExtResource("2_qdhfx")
+
+[node name="ObjectSelect2" parent="ScrollContainer/GridContainer" instance=ExtResource("1_k1atb")]
+layout_mode = 2
+texture_normal = ExtResource("3_i5ghq")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://h5jcbcbuwsoc"]
+
+[ext_resource type="PackedScene" uid="uid://b24nsr00rm8tn" path="res://GridEditor/GridEditor.tscn" id="1_pr0t5"]
+
+[node name="Editor" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_pr0t5")]
