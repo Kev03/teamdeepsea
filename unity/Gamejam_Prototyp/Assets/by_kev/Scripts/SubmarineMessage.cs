@@ -8,7 +8,6 @@ public class SubmarineMessage : MonoBehaviour
 
     public void MsgForDiver(string msgName)
     {
-        Debug.Log("Sub Message Detected: " + msgName);
         StartCoroutine(GetRequest("https://www.dh-profil.uni-tuebingen.de/gamejam/sub-receiver.php?msg=" + msgName));
     }
 
@@ -27,13 +26,13 @@ public class SubmarineMessage : MonoBehaviour
             {
                 case UnityWebRequest.Result.ConnectionError:
                 case UnityWebRequest.Result.DataProcessingError:
-                    Debug.LogError(pages[page] + ": Error: " + webRequest.error);
+                    //Debug.LogError(pages[page] + ": Error: " + webRequest.error);
                     break;
                 case UnityWebRequest.Result.ProtocolError:
-                    Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
+                    //Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
                     break;
                 case UnityWebRequest.Result.Success:
-                    Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                    //Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     break;
             }
         }

@@ -19,7 +19,6 @@ public class ArrowSpawn : MonoBehaviour
         Vector3 position = GetPosition(direction);
         instance.GetComponent<Arrow>().Init(rotation, position);
         onSpawn?.Invoke(instance);
-        Debug.Log("Spawned!");
     }
 
     private Vector3 GetRotation(SwipeInputDetect.SwipeDirection direction)

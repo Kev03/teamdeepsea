@@ -25,6 +25,8 @@ public class Timer : MonoBehaviour
 
     private bool isActive = false;
 
+    [SerializeField]
+    private string timerName = "";
     // Start is called before the first frame update
     void Start()
     {
@@ -37,9 +39,12 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log("Timer is active: " + timerName);
+        //Debug.Log(gameObject);
         if(isActive && (Time.time > timeout))
         {
             OnTimeOut();
+          //  Debug.Log("Timer timeout: " + timerName);
         }
     }
 

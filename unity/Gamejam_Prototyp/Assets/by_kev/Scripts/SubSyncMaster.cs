@@ -16,7 +16,7 @@ public class SubSyncMaster : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, lastPos) > offset)
         {
-            Debug.Log("New Pos communicated");
+            //Debug.Log("New Pos communicated");
             StartCoroutine(OnNewPosition("https://www.dh-profil.uni-tuebingen.de/gamejam/sub-pos-receiver.php?pos=" + transform.position.ToString()));
             lastPos = transform.position;
         }
@@ -38,13 +38,13 @@ public class SubSyncMaster : MonoBehaviour
             {
                 case UnityWebRequest.Result.ConnectionError:
                 case UnityWebRequest.Result.DataProcessingError:
-                    Debug.LogError(pages[page] + ": Error: " + webRequest.error);
+                    //Debug.LogError(pages[page] + ": Error: " + webRequest.error);
                     break;
                 case UnityWebRequest.Result.ProtocolError:
-                    Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
+                    //Debug.LogError(pages[page] + ": HTTP Error: " + webRequest.error);
                     break;
                 case UnityWebRequest.Result.Success:
-                    Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                    //Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     break;
             }
         }
