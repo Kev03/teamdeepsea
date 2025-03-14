@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://d143441nagrh4"]
+
+[ext_resource type="Script" uid="uid://c2cev3vubejur" path="res://scripts/level/level_base.gd" id="1_upopr"]
+[ext_resource type="Texture2D" uid="uid://dw080u5x8vp57" path="res://assets/textures/background/bg_dark.png" id="2_7xj1c"]
+[ext_resource type="PackedScene" uid="uid://mnt7or0e1atw" path="res://scenes/ui/diver_ui.tscn" id="2_e1fnv"]
+[ext_resource type="PackedScene" uid="uid://beq081gcndgdx" path="res://scenes/ui/submarine_ui.tscn" id="3_3ipv6"]
+[ext_resource type="Texture2D" uid="uid://cev5o5wi6hf28" path="res://assets/textures/util/level_border.tres" id="5_3ipv6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8xnqg"]
+texture = ExtResource("5_3ipv6")
+texture_region_size = Vector2i(24, 24)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 12, -12, 12)
+
+[sub_resource type="TileSet" id="TileSet_e1fnv"]
+tile_size = Vector2i(24, 24)
+occlusion_layer_0/light_mask = 1
+occlusion_layer_1/light_mask = 2
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_8xnqg")
+
+[node name="BaseLevel" type="Node2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1_upopr")
+diver_ui = ExtResource("2_e1fnv")
+submarine_ui = ExtResource("3_3ipv6")
+camera = NodePath("Camera2D")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_7xj1c")
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://dcfd8064h5ikt", "uid://cnwki8j0m0k27", "uid://bx5pqhjpilw3q", "uid://bisekg0pg56aw", "uid://pycdq5dsx66a", "uid://cj7na0qcqylb8", "uid://bcf6ctig6boa4")
+spawn_path = NodePath("../LevelData")
+spawn_limit = 1024
+
+[node name="LevelData" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_e1fnv")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1080
+position_smoothing_enabled = true

@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg01i48mpar2f"]
+
+[ext_resource type="Script" uid="uid://djjq7dm20vnf0" path="res://scripts/ui/menu.gd" id="1_7w7rl"]
+[ext_resource type="Texture2D" uid="uid://c81ihj7tsj4hk" path="res://assets/textures/background/bg_light.png" id="2_wedc3"]
+[ext_resource type="Texture2D" uid="uid://bbrqf76e1nvbk" path="res://assets/textures/logo.png" id="3_c2n5p"]
+[ext_resource type="Theme" uid="uid://bc2n8x0qgbg2c" path="res://assets/themes/menu_theme.tres" id="3_w6y0u"]
+[ext_resource type="Texture2D" uid="uid://bnfnjiwqhe0vh" path="res://assets/textures/creatures/jelly.png" id="5_cx0sj"]
+
+[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("HostButton", "JoinButton", "CancelButton", "ErrorOutput")]
+script = ExtResource("1_7w7rl")
+HostButton = NodePath("HBoxContainer/HostButton")
+JoinButton = NodePath("HBoxContainer/JoinButton")
+CancelButton = NodePath("HBoxContainer/CancelButton")
+ErrorOutput = NodePath("ErrorDialog")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_wedc3")
+
+[node name="Logo" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.05
+anchor_right = 0.5
+anchor_bottom = 0.05
+offset_left = -445.5
+offset_right = 420.54
+offset_bottom = 405.12
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("3_c2n5p")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.2
+anchor_top = 0.6
+anchor_right = 0.8
+anchor_bottom = 0.9
+offset_left = -43.0
+offset_top = -0.0400391
+offset_right = 43.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HostButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w6y0u")
+text = "Submarine"
+
+[node name="JoinButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w6y0u")
+text = "Diver"
+
+[node name="CancelButton" type="Button" parent="HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_w6y0u")
+text = "Cancel"
+
+[node name="Jelly" type="TextureRect" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -187.0
+offset_top = -187.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("5_cx0sj")
+expand_mode = 1
+
+[node name="ErrorDialog" type="AcceptDialog" parent="."]
+title = "Network Error Message"
+initial_position = 2
+size = Vector2i(320, 100)
+ok_button_text = "Close"
+dialog_text = "Error Message"

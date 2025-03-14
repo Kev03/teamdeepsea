@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqumnxyovxlni"]
+
+[ext_resource type="Script" uid="uid://0nk57gc6sgqb" path="res://scripts/player/player_input.gd" id="1_o7y6m"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_tt1ro"]
+properties/0/path = NodePath(".:input_direction")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="PlayerInput" type="Node"]
+script = ExtResource("1_o7y6m")
+
+[node name="ClientSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_tt1ro")
+public_visibility = false

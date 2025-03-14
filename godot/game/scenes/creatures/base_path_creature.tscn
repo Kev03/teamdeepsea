@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwav3f4m2r6yc"]
+
+[ext_resource type="PackedScene" uid="uid://b25yr3j52xi88" path="res://scenes/creatures/base_creature.tscn" id="1_e7d82"]
+[ext_resource type="Script" uid="uid://bvekmxkl2sjdb" path="res://scripts/creatures/path_creature.gd" id="2_irktx"]
+
+[sub_resource type="Curve2D" id="Curve2D_e7d82"]
+resource_local_to_scene = true
+
+[node name="BasePathCreature" instance=ExtResource("1_e7d82")]
+
+[node name="Creature" parent="." index="1" groups=["creatures"]]
+
+[node name="Path2D" type="Path2D" parent="." index="2" node_paths=PackedStringArray("path_follow", "remote_transform")]
+curve = SubResource("Curve2D_e7d82")
+script = ExtResource("2_irktx")
+path_follow = NodePath("PathFollow2D")
+remote_transform = NodePath("PathFollow2D/RemoteTransform2D")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D" index="0"]
+remote_path = NodePath("../../../Creature")

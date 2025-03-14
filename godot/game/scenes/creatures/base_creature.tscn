@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://b25yr3j52xi88"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ikt0j"]
+properties/0/path = NodePath("Creature:position")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[node name="BaseCreature" type="Node2D"]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_ikt0j")
+
+[node name="Creature" type="Area2D" parent="."]

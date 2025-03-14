@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="down.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="px"
+     showgrid="true"
+     inkscape:zoom="10.842304"
+     inkscape:cx="26.654851"
+     inkscape:cy="27.992205"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       id="grid1"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="1"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 34.793429,34.157033 c 0,0.565685 -0.200347,1.048875 -0.601041,1.449569 l -1.414213,1.414213 h -19.79899 l 0,-19.79899 1.414213,-1.414213 c 0.400694,-0.400694 0.872096,-0.612828 1.414214,-0.636396 0.542115,0.02357 1.013517,0.2357 1.414213,0.636396 l 4.242641,4.242641 9.899495,-9.899495 c 0.400694,-0.4006943 0.872096,-0.6128286 1.414214,-0.6363965 0.542115,0.02357 1.013517,0.2356999 1.414213,0.6363965 l 5.621499,5.621499 c 0.400696,0.400696 0.612826,0.872098 0.636396,1.414213 0,0.565685 -0.200347,1.048875 -0.601041,1.449569 l -9.899495,9.899495 4.207286,4.207285 c 0.400696,0.400696 0.612826,0.872098 0.636396,1.414214"
+       style="fill:#ffffff;stroke:none"
+       id="path1" />
+  </g>
+</svg>

@@ -1,0 +1,162 @@
+[gd_scene load_steps=28 format=3 uid="uid://dcfd8064h5ikt"]
+
+[ext_resource type="Texture2D" uid="uid://cm5nik7g4tp37" path="res://assets/textures/player/diver/diver-1.png" id="1_pebhd"]
+[ext_resource type="Script" uid="uid://crycftkyq7kpc" path="res://scripts/player/diver.gd" id="1_qoqwi"]
+[ext_resource type="Texture2D" uid="uid://dwmt42kulg7u0" path="res://assets/textures/player/diver/diver-2.png" id="2_qoqwi"]
+[ext_resource type="Script" uid="uid://0nk57gc6sgqb" path="res://scripts/player/player_input.gd" id="2_tt1ro"]
+[ext_resource type="Texture2D" uid="uid://dhm3jh6el7bgs" path="res://assets/textures/player/diver/diver-3.png" id="3_tt1ro"]
+[ext_resource type="Texture2D" uid="uid://qjmcgoocbuwi" path="res://assets/textures/player/diver/diver-4.png" id="4_wyq14"]
+[ext_resource type="Texture2D" uid="uid://bx0poyputdpkb" path="res://assets/textures/player/diver/diver-5.png" id="5_dv7ru"]
+[ext_resource type="Texture2D" uid="uid://b4wa7a2udq542" path="res://assets/textures/player/diver/diver-6.png" id="6_gm4ih"]
+[ext_resource type="Texture2D" uid="uid://cp54uasn3ufbt" path="res://assets/textures/player/diver/diver-7.png" id="7_w8en8"]
+[ext_resource type="Texture2D" uid="uid://bn7w0no6kjw8l" path="res://assets/textures/player/diver/diver-8.png" id="8_hh4lq"]
+[ext_resource type="Texture2D" uid="uid://cm02k4dpflxl5" path="res://assets/textures/player/diver/diver-9.png" id="9_vvmgf"]
+[ext_resource type="Texture2D" uid="uid://bh2petkwogbr6" path="res://assets/textures/player/diver/diver-10.png" id="10_8xaxm"]
+[ext_resource type="Texture2D" uid="uid://buplrb58carjh" path="res://assets/textures/player/diver/diver-11.png" id="11_x7c3c"]
+[ext_resource type="Texture2D" uid="uid://cb6ss4q3k4fv4" path="res://assets/textures/player/diver/diver-12.png" id="12_ai5de"]
+[ext_resource type="Texture2D" uid="uid://b0elodwvemjsj" path="res://assets/textures/player/diver/diver-13.png" id="13_gfasx"]
+[ext_resource type="Texture2D" uid="uid://dw3p0g2oyjna8" path="res://assets/textures/player/diver/diver-14.png" id="14_j1d77"]
+[ext_resource type="Texture2D" uid="uid://84snph81beyx" path="res://assets/textures/player/diver/diver-15.png" id="15_o3kfb"]
+[ext_resource type="Texture2D" uid="uid://ck17axym1vf40" path="res://assets/textures/player/diver/diver-16.png" id="16_xm6xt"]
+[ext_resource type="Texture2D" uid="uid://cmvw2h4quetxe" path="res://assets/textures/player/diver/diver-17.png" id="17_jcon0"]
+[ext_resource type="Texture2D" uid="uid://0u8nug67rj75" path="res://assets/textures/player/diver/diver-18.png" id="18_t86f8"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_qoqwi"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_wyq14"]
+properties/0/path = NodePath("PlayerInput:input_direction")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tt1ro"]
+light_mode = 2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6nrvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pebhd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pebhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qoqwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tt1ro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wyq14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dv7ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gm4ih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_w8en8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hh4lq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vvmgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8xaxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_x7c3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ai5de")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gfasx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_j1d77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_o3kfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_xm6xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jcon0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_t86f8")
+}],
+"loop": true,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0prey"]
+radius = 9.0
+height = 48.1852
+
+[sub_resource type="Gradient" id="Gradient_wyq14"]
+offsets = PackedFloat32Array(0, 0.999975, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wyq14"]
+gradient = SubResource("Gradient_wyq14")
+width = 200
+height = 200
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[node name="Diver" type="CharacterBody2D" node_paths=PackedStringArray("ambient_light", "audio_player", "sprite", "player_input", "remote_transform") groups=["divers"]]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_qoqwi")
+ambient_light = NodePath("AmbientLight2D")
+audio_player = NodePath("AudioCommandPlayer")
+sprite = NodePath("AnimatedSprite2D")
+player_input = NodePath("PlayerInput")
+remote_transform = NodePath("RemoteTransform2D")
+
+[node name="ServerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_qoqwi")
+
+[node name="PlayerInput" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_wyq14")
+public_visibility = false
+script = ExtResource("2_tt1ro")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_tt1ro")
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_6nrvr")
+frame_progress = 0.893917
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.871637)
+shape = SubResource("CapsuleShape2D_0prey")
+
+[node name="AmbientLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.359375, 0.359375)
+texture = SubResource("GradientTexture2D_wyq14")
+
+[node name="AudioCommandPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]

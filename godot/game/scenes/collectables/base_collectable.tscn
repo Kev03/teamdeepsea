@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv34ljanyrrli"]
+
+[ext_resource type="Script" uid="uid://dctjrdjrtsu5s" path="res://scripts/collectables/collectable.gd" id="1_5refb"]
+[ext_resource type="Texture2D" uid="uid://bor4ysss2gpv6" path="res://assets/textures/creatures/clam.png" id="2_5axqd"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5refb"]
+light_mode = 2
+
+[sub_resource type="Gradient" id="Gradient_5refb"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5refb"]
+gradient = SubResource("Gradient_5refb")
+
+[node name="BaseCollectable" type="Area2D" groups=["collectables"]]
+script = ExtResource("1_5refb")
+ui_icon = ExtResource("2_5axqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_5refb")
+scale = Vector2(0.1, 0.1)
+
+[node name="EditorLight" type="PointLight2D" parent="."]
+editor_only = true
+energy = 0.0
+texture = SubResource("GradientTexture2D_5refb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

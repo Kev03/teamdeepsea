@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bx5pqhjpilw3q"]
+
+[ext_resource type="PackedScene" uid="uid://dwav3f4m2r6yc" path="res://scenes/creatures/base_path_creature.tscn" id="1_8snh6"]
+[ext_resource type="Texture2D" uid="uid://75govmyjjcw6" path="res://assets/textures/creatures/crab.png" id="2_ouak3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e4qsm"]
+radius = 14.0
+height = 38.0
+
+[sub_resource type="Curve2D" id="Curve2D_e4qsm"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, -200, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Crab" instance=ExtResource("1_8snh6")]
+
+[node name="Creature" parent="." index="1"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="Creature" index="0"]
+scale = Vector2(0.045, 0.045)
+texture = ExtResource("2_ouak3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Creature" index="1"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_e4qsm")
+
+[node name="Path2D" parent="." index="2"]
+curve = SubResource("Curve2D_e4qsm")

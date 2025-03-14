@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://cnwki8j0m0k27"]
+
+[ext_resource type="Texture2D" uid="uid://bk3fy26tm22jv" path="res://assets/textures/player/submarine/u-boot.png" id="1_2b83y"]
+[ext_resource type="Script" uid="uid://dbwvb38tmxu5d" path="res://scripts/player/submarine.gd" id="1_u2ljl"]
+[ext_resource type="Script" uid="uid://0nk57gc6sgqb" path="res://scripts/player/player_input.gd" id="2_nkynd"]
+[ext_resource type="Texture2D" uid="uid://c8767nu0kl8x8" path="res://assets/textures/player/submarine/light_cone.svg" id="4_nkynd"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_u2ljl"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:velocity")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v58a1"]
+properties/0/path = NodePath("PlayerInput:input_direction")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u2ljl"]
+radius = 34.0
+height = 132.0
+
+[sub_resource type="Gradient" id="Gradient_008cv"]
+offsets = PackedFloat32Array(0, 0.999975, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nkynd"]
+gradient = SubResource("Gradient_008cv")
+width = 1024
+height = 1024
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
+metadata/_snap_enabled = true
+
+[node name="Submarine" type="CharacterBody2D" node_paths=PackedStringArray("front_light", "ambient_light", "sprite", "player_input", "remote_transform") groups=["submarines"]]
+collision_layer = 4
+motion_mode = 1
+script = ExtResource("1_u2ljl")
+front_light = NodePath("FrontLight2D")
+ambient_light = NodePath("AmbientLight2D")
+sprite = NodePath("Sprite2D")
+player_input = NodePath("PlayerInput")
+remote_transform = NodePath("RemoteTransform2D")
+
+[node name="ServerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_u2ljl")
+
+[node name="PlayerInput" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_v58a1")
+public_visibility = false
+script = ExtResource("2_nkynd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
+position = Vector2(0, -8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_2b83y")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 8)
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_u2ljl")
+
+[node name="AmbientLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.201172, 0.201172)
+texture = SubResource("GradientTexture2D_nkynd")
+
+[node name="FrontLight2D" type="PointLight2D" parent="."]
+position = Vector2(98.1465, 157.604)
+rotation = -0.349066
+scale = Vector2(0.242097, 0.599534)
+energy = 0.2
+texture = ExtResource("4_nkynd")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+update_rotation = false
+update_scale = false

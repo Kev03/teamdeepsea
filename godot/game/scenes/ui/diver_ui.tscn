@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://mnt7or0e1atw"]
+
+[ext_resource type="Texture2D" uid="uid://cp5kmq1j0gky8" path="res://assets/textures/ui/buttons/diverUi/upLeft.svg" id="1_rr2a5"]
+[ext_resource type="Script" uid="uid://d3xiu360mhdh" path="res://scripts/classes/multi_touch_screen_button.gd" id="2_xndm3"]
+[ext_resource type="Texture2D" uid="uid://ba0w4qp8rs8j0" path="res://assets/textures/ui/buttons/diverUi/up.svg" id="3_voran"]
+[ext_resource type="Texture2D" uid="uid://dnwq0vpgopecb" path="res://assets/textures/ui/buttons/diverUi/upRight.svg" id="4_hkqey"]
+[ext_resource type="Texture2D" uid="uid://bcjgdtjqiyogq" path="res://assets/textures/ui/buttons/diverUi/left.svg" id="5_mrp8e"]
+[ext_resource type="Texture2D" uid="uid://dyr2ut77owwx6" path="res://assets/textures/ui/buttons/diverUi/right.svg" id="6_rli2g"]
+[ext_resource type="Texture2D" uid="uid://bptp2eyn0w8cu" path="res://assets/textures/ui/buttons/diverUi/downLeft.svg" id="7_e7j7e"]
+[ext_resource type="Texture2D" uid="uid://k2oivoye8akg" path="res://assets/textures/ui/buttons/diverUi/down.svg" id="8_evw2r"]
+[ext_resource type="Texture2D" uid="uid://cee4ygamvd8st" path="res://assets/textures/ui/buttons/diverUi/downRight.svg" id="9_hvst1"]
+
+[node name="DiverUI" type="Node2D"]
+
+[node name="DarknessDiver" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="Overlay"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="UpLeft" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("1_rr2a5")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_up", &"move_left"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"
+
+[node name="Up" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("3_voran")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_up"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"
+
+[node name="UpRight" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("4_hkqey")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_up", &"move_right"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"
+
+[node name="Left" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("5_mrp8e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_left"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"
+
+[node name="Control" type="Control" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="Right" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("6_rli2g")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_right"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"
+
+[node name="LeftDown" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("7_e7j7e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_down", &"move_left"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"
+
+[node name="Down" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("8_evw2r")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_down"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"
+
+[node name="RightDown" type="Button" parent="Overlay/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("9_hvst1")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_xndm3")
+input_action = Array[StringName]([&"move_down", &"move_right"])
+metadata/_custom_type_script = "uid://d3xiu360mhdh"

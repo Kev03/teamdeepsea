@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcf6ctig6boa4"]
+
+[ext_resource type="PackedScene" uid="uid://dv34ljanyrrli" path="res://scenes/collectables/base_collectable.tscn" id="1_i623s"]
+[ext_resource type="Texture2D" uid="uid://bor4ysss2gpv6" path="res://assets/textures/creatures/clam.png" id="2_jsjg6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jsjg6"]
+radius = 23.0
+height = 60.0
+
+[node name="Clam" instance=ExtResource("1_i623s")]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_jsjg6")
+
+[node name="EditorLight" parent="." index="1"]
+scale = Vector2(0.875, 0.724)
+
+[node name="CollisionShape2D" parent="." index="2"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_jsjg6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
