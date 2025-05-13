@@ -5,12 +5,14 @@ using UnityEngine.Events;
 
 public class ArrowSpawn : MonoBehaviour
 {
-    private UnityEvent<GameObject> onSpawn;
+    public UnityEvent<GameObject> onSpawn;
 
     [SerializeField] private GameObject arrowPrefab;
 
     [SerializeField, Tooltip("Positions of the arrow 0: Above, 1: Right, 2: Beneath, 3: Left")]
     private Transform[] positions;
+
+    private SwipeInputDetect.SwipeDirection lastKnownDirection = SwipeInputDetect.SwipeDirection.Left;
 
     public void SpawnPrefab(SwipeInputDetect.SwipeDirection direction)
     {
@@ -19,6 +21,25 @@ public class ArrowSpawn : MonoBehaviour
         Vector3 position = GetPosition(direction);
         instance.GetComponent<Arrow>().Init(rotation, position);
         onSpawn?.Invoke(instance);
+    }
+
+    public void SpawnPrefab(string direction)
+    {
+        switch (direction.ToLower())
+        {
+            case "up": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Up; break; }
+            case "down": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Down; break; }
+            case "left": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Left; break; }
+            case "right": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Right; break; }
+            default: { Debug.Log("Some wrong string was sent to SpawnPrefab(string direction);"); break; }
+        }
+
+        SpawnPrefab(lastKnownDirection);
+    }
+
+    public void SpawnPrefab()
+    {
+        SpawnPrefab(lastKnownDirection);
     }
 
     private Vector3 GetRotation(SwipeInputDetect.SwipeDirection direction)

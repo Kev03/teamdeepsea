@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Collectable : MonoBehaviour
 {
     private AudioSource audioSource;
     public int audiodelay = 10;
+
+    public UnityEvent OnLightEntered;
+    public UnityEvent OnLightLeaved;
+    public UnityEvent OnCollected;
 
     void Start()
     {
@@ -34,10 +39,28 @@ public class Collectable : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log("Trigger entered by: " + other.gameObject.name);
-        Destroy(gameObject);
+        if (other.gameObject.GetComponent<DiverCollector>() != null)
+        {
+            Debug.Log(other.gameObject.name);
+            OnCollected?.Invoke();
+            Destroy(gameObject);
+        }else if(other.gameObject.GetComponent<SubmarineLight>()!= null)
+        {
+            OnLightEntered?.Invoke();
+        }
+        
     }
-     private float CalculateAudioDelay()
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.gameObject.GetComponent<SubmarineLight>()!= null)
+        {
+            OnLightLeaved?.Invoke();
+        }
+    }
+
+
+    private float CalculateAudioDelay()
     {
         // Finde den AudioListener in der Szene
         AudioListener audioListener = FindObjectOfType<AudioListener>();

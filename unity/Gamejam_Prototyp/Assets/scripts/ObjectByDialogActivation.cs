@@ -12,17 +12,15 @@ public class ObjectByDialogActivation : MonoBehaviour
 
     public void ReceiveDialogMessage(DialogMessage dialogMessage)
     {
-        GameObject activationObject = null;
-
+        
         for(int i = 0; i<positions.Length; i++)
         {
             if(dialogMessage.Position == positions[i])
             {
-                activationObject = gameObjectsToActivate[i];
+                gameObjectsToActivate[i].SetActive(true);
             }
         }
 
-        if (activationObject != null) activationObject.SetActive(true);
     }
 
 }

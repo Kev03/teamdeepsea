@@ -1021,6 +1021,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &316057385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1051,6 +1052,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &316057386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,6 +1066,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiodelay: 100
+  OnLightEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLightLeaved:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &316057387
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3634,6 +3645,7 @@ MonoBehaviour:
   waittime: 0.5
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &674301135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6364,7 +6376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1193551736
 Transform:
   m_ObjectHideFlags: 0
@@ -8274,6 +8286,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &1501824735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8304,6 +8317,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &1501824736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8317,6 +8331,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiodelay: 100
+  OnLightEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLightLeaved:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &1501824737
 AudioSource:
   m_ObjectHideFlags: 0
@@ -10832,6 +10855,7 @@ MonoBehaviour:
   waittime: 0.5
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &1829471559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11995,6 +12019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad4816f8c5eeb6468d4934615a9fdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls: []
   arrowPrefab: {fileID: 2961525570033999392, guid: 8d05c511a43cba34e937c108845dac96, type: 3}
   positions:
   - {fileID: 1464797319}
@@ -12039,6 +12066,7 @@ MonoBehaviour:
   waittime: 0.5
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &1953502186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12324,6 +12352,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &2013214503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12354,6 +12383,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &2013214504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12367,6 +12397,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiodelay: 100
+  OnLightEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLightLeaved:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &2013214505
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13100,6 +13139,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &2082480395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13130,6 +13170,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &2082480396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13143,6 +13184,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audiodelay: 100
+  OnLightEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  OnLightLeaved:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &2082480397
 AudioSource:
   m_ObjectHideFlags: 0
@@ -13904,6 +13954,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1118725993426562528, guid: 02b0cf4d97ebd604a85b454951af096e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6549433847048933342, guid: 02b0cf4d97ebd604a85b454951af096e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 86.05814

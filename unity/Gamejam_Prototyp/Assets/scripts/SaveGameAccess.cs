@@ -11,6 +11,7 @@ public class SaveGameAccess : MonoBehaviour
     private void Awake()
     {
         saveGamePath = Application.persistentDataPath + Path.DirectorySeparatorChar + "savegame.json";
+        Debug.Log("Look here for Savegame: " + saveGamePath);
         if (!SaveGameExists())
         {
             InitSaveGame();

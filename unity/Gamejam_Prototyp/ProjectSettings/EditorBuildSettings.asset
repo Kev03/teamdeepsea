@@ -8,19 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 4ba2c2934def36941a00e71cd1e9f47b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DiverLevelLoad.unity
     guid: 3acc7d33269dc5247a50c65e7cdd95c9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SubmarineLevelLoad.unity
     guid: b6e246cbadd42854d87b8a7de6885cd7
   - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: d2dba1963b7b1be4e8565993d36ad225
-  - enabled: 0
     path: Assets/Scenes/Legacy/TaucherSzene.unity
     guid: a3f69d2c588277b459cde88738a8d914
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Legacy/UbootSzene.unity
     guid: 5b77902f0259e0f499b6bdae9afa6cb8
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: d2dba1963b7b1be4e8565993d36ad225
   m_configObjects: {}
