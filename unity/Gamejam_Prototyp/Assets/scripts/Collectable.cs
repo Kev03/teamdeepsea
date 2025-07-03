@@ -10,7 +10,19 @@ public class Collectable : MonoBehaviour
 
     public UnityEvent OnLightEntered;
     public UnityEvent OnLightLeaved;
-    public UnityEvent OnCollected;
+    public UnityEvent<Collectable> OnCollected;
+
+    private bool isOpen = false;
+
+    [SerializeField]
+    private string id;
+
+    public string ID
+    {
+        get { return id; }
+    }
+
+    public bool debugCollect = false;
 
     void Start()
     {
@@ -24,6 +36,11 @@ public class Collectable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) // KeyCode.Space kann durch jede beliebige Taste ersetzt werden
         {
             PlayCollectibleSound();
+        }
+
+        if (debugCollect)
+        {
+            Collect();
         }
         
     }
@@ -39,16 +56,21 @@ public class Collectable : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.GetComponent<DiverCollector>() != null)
+        if (isOpen && other.gameObject.GetComponent<DiverCollector>() != null)
         {
-            Debug.Log(other.gameObject.name);
-            OnCollected?.Invoke();
-            Destroy(gameObject);
+            Collect();            
         }else if(other.gameObject.GetComponent<SubmarineLight>()!= null)
         {
+            isOpen = true;
             OnLightEntered?.Invoke();
         }
         
+    }
+
+    private void Collect()
+    {
+        OnCollected?.Invoke(this);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -56,6 +78,7 @@ public class Collectable : MonoBehaviour
         if(other.gameObject.GetComponent<SubmarineLight>()!= null)
         {
             OnLightLeaved?.Invoke();
+            isOpen = false;
         }
     }
 

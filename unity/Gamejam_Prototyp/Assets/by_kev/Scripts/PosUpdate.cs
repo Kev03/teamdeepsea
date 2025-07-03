@@ -10,7 +10,14 @@ public class PosUpdate : MonoBehaviour
 
     [SerializeField]
     private float speed = 10.0f;
+
     private Vector3 target;
+
+
+    private void Awake()
+    {
+        target = transform.position;
+    }
 
     // Update is called once per frame
     void Update()
@@ -29,15 +36,13 @@ public class PosUpdate : MonoBehaviour
 
     public void SetTarget(Vector3 target)
     {
-        if(Vector3.Distance(transform.position, target) > offset)
+                      
+        if (Vector3.Distance(transform.position, target) > offset)
         {
-            //Debug.Log("Target SET");
+            Debug.Log("Target SET: " + target);
             this.target = target;
             enabled = true;
         }
-        
-
-
 
     }
 

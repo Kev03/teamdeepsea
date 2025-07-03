@@ -19,6 +19,9 @@ public class SwipeInputDetect : MonoBehaviour
     }
 
     public UnityEvent<SwipeDirection> SwipeDetected = new UnityEvent<SwipeDirection>();
+    public UnityEvent<string> OnSwipeDetected;
+
+
 
     [SerializeField]
     private float offset = 1.0f;
@@ -45,17 +48,26 @@ public class SwipeInputDetect : MonoBehaviour
         if (touchEnd.x < touchStart.x - offset)
         {
             SwipeDetected?.Invoke(SwipeDirection.Left);
+            OnSwipeDetected?.Invoke(SingleDiverMessage.DiverMessageTypes.left.ToString());
+            Debug.Log("Left swiped");
         }
         else if (touchEnd.x > touchStart.x + offset)
         {
             SwipeDetected?.Invoke(SwipeDirection.Right);
+            OnSwipeDetected?.Invoke(SingleDiverMessage.DiverMessageTypes.right.ToString());
+            Debug.Log("Right swiped");
         }
         else if (touchEnd.y < touchStart.y - offset)
         {
             SwipeDetected?.Invoke(SwipeDirection.Down);
-        }else if(touchEnd.y > touchStart.y + offset)
+            OnSwipeDetected?.Invoke(SingleDiverMessage.DiverMessageTypes.down.ToString());
+            Debug.Log("Down swiped");
+        }
+        else if(touchEnd.y > touchStart.y + offset)
         {
             SwipeDetected?.Invoke(SwipeDirection.Up);
+            OnSwipeDetected?.Invoke(SingleDiverMessage.DiverMessageTypes.up.ToString());
+            Debug.Log("Up swiped");
         }
         else
         {

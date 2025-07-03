@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +122,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &286796974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 286796975}
+  m_Layer: 0
+  m_Name: LevelTemplate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &286796975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286796974}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 732.7331, y: 893.8446, z: -5.0410786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &386859592
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,12 +673,12 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    quality: 3
-    frameInfluence: 0.1
-    jitterScale: 1
-    mipBias: 0
-    varianceClampScale: 0.9
-    contrastAdaptiveSharpening: 0
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
 --- !u!1 &546945841
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +990,7 @@ MonoBehaviour:
   waittime: 0.5
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &674301135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,6 +1726,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!1001 &1036393988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3035,6 +3067,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!1001 &1525645893
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3141,6 +3174,7 @@ MonoBehaviour:
   waittime: 3
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!1 &1543781251
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,6 +4290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19f93306f5dfda499359f499fa64514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visibleSub: {fileID: 0}
   moveSpeed: 40
   PlayerType: 0
   radarAudioSource: {fileID: 0}
@@ -4289,6 +4324,7 @@ MonoBehaviour:
   waittime: 0.5
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &1829471559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4651,6 +4687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f19f93306f5dfda499359f499fa64514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visibleSub: {fileID: 0}
   moveSpeed: 40
   PlayerType: 1
   radarAudioSource: {fileID: 2091256239}
@@ -4666,6 +4703,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ad4816f8c5eeb6468d4934615a9fdc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls: []
   arrowPrefab: {fileID: 2961525570033999392, guid: 8d05c511a43cba34e937c108845dac96, type: 3}
   positions:
   - {fileID: 1464797319}
@@ -4710,6 +4750,7 @@ MonoBehaviour:
   waittime: 0.5
   startOnAwake: 1
   oneShot: 0
+  timerName: 
 --- !u!114 &1953502186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5276,3 +5317,4 @@ SceneRoots:
   - {fileID: 1036393988}
   - {fileID: 2009937238}
   - {fileID: 1761734114}
+  - {fileID: 286796975}

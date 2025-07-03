@@ -13,6 +13,13 @@ public class AsyncSceneLoader : MonoBehaviour
 
     [SerializeField]
     private bool sceneSwitchPermit = false;
+
+    [SerializeField]
+    private bool debugLog = false;
+
+    [SerializeField]
+    private bool startAsyncLoading = false;
+
     public bool SceneSwitchPermit
     {
         set { sceneSwitchPermit = value; }
@@ -25,6 +32,7 @@ public class AsyncSceneLoader : MonoBehaviour
         //wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
+            if (debugLog) Debug.Log(asyncLoad.progress);
             //scene has loaded as much as possible,
             // the last 10% can't be multi-threaded
             if (asyncLoad.progress >= 0.9f && sceneSwitchPermit)
@@ -38,7 +46,14 @@ public class AsyncSceneLoader : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(LoadAsyncScene()); 
+        if(debugLog) Debug.Log("Hi there");
+        if(startAsyncLoading) StartCoroutine(LoadAsyncScene()); 
     }
+
+    public void ChangeScene(int buildIndex)
+    {
+        SceneManager.LoadScene(buildIndex, LoadSceneMode.Single);
+    }
+
 
 }

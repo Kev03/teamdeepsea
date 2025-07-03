@@ -14,11 +14,13 @@ public class DirectionButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
  
     public void OnPointerDown(PointerEventData eventData){
         buttonPressed = true;
+        Debug.Log("Pointer Down");
     }
  
     public void OnPointerUp(PointerEventData eventData){
         buttonPressed = false;
         releaseEvent?.Invoke();
+        Debug.Log("Pointer Up");
     }
 
     private void Update()

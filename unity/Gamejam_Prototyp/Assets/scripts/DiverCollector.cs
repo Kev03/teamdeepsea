@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class DiverCollector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [SerializeField]
+    private AudioSource sonar;
+
+    private AudioClip collectionSFX; 
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        sonar.PlayOneShot(collectionSFX);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

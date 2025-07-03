@@ -25,16 +25,21 @@ public class ArrowSpawn : MonoBehaviour
 
     public void SpawnPrefab(string direction)
     {
+        bool exception = false;
         switch (direction.ToLower())
         {
             case "up": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Up; break; }
             case "down": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Down; break; }
             case "left": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Left; break; }
             case "right": { lastKnownDirection = SwipeInputDetect.SwipeDirection.Right; break; }
-            default: { Debug.Log("Some wrong string was sent to SpawnPrefab(string direction);"); break; }
+            default: { 
+                    Debug.Log("Some wrong string was sent to SpawnPrefab(string direction);");
+                    exception = true;
+                    break; 
+                }
         }
 
-        SpawnPrefab(lastKnownDirection);
+        if(!exception) SpawnPrefab(lastKnownDirection);
     }
 
     public void SpawnPrefab()

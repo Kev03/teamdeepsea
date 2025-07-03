@@ -7,7 +7,7 @@ public class InstancePlacement : MonoBehaviour
 
     public void AddChild(GameObject gameObject)
     {
-        gameObject.transform.parent = this.transform;
+        gameObject.transform.SetParent(this.transform);
     }
 
 }

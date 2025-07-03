@@ -22,5 +22,4 @@ public class DiverMessages : MonoBehaviour
         destinationChange?.Invoke(desinationChangeVector);
     }
 
-
 }
