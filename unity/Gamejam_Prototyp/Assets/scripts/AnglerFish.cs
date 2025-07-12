@@ -12,12 +12,17 @@ public class AnglerFish : MonoBehaviour
     private void Start()
     {
         startPosition = transform.position;
+        Debug.Log(startPosition);
+        this.enabled = false;
     }
 
     private void Update()
     {
-        float step = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, Submarine.Instance.transform.position, step);
+        if (Submarine.Instance != null)
+        {
+            float step = speed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, Submarine.Instance.transform.position, step);
+        }
     }
 
     public void Reset()

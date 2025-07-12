@@ -4,12 +4,26 @@ using UnityEngine.Events;
 
 public class GatePreconditionsList : MonoBehaviour
 {
-    public UnityEvent PreconditionFullfilled;
+    public UnityEvent<string> PreconditionFullfilled;
 
     [SerializeField]
     private GatePrecondition[] preconditions;
 
     private Dictionary<GatePrecondition, bool> conditionsMet = new Dictionary<GatePrecondition, bool>();
+
+    [SerializeField]
+    private string id;
+
+    public string ID
+    {
+        get { return id; }
+    }
+
+    private bool isMet = false;
+    public bool IsMet
+    {
+        get { return isMet; }
+    }
 
     private void Start()
     {
@@ -25,7 +39,7 @@ public class GatePreconditionsList : MonoBehaviour
         conditionsMet[precondition] = true;
         if (CheckFullfillment())
         {
-            PreconditionFullfilled?.Invoke();
+            MeetPrerequisites();
         }
     }
 
@@ -41,7 +55,11 @@ public class GatePreconditionsList : MonoBehaviour
 
     }
 
-
+    public void MeetPrerequisites()
+    {
+        PreconditionFullfilled?.Invoke(id);
+        isMet = true;
+    }
 
 
 

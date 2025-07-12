@@ -283,10 +283,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3054707892193095282, guid: 99f46198c66a8844197fca90139e1884, type: 3}
-      propertyPath: collectableSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0d4bceb427df7b048a5ceef6f9b875e2, type: 3}
     - target: {fileID: 8414541380260850156, guid: 99f46198c66a8844197fca90139e1884, type: 3}
       propertyPath: m_Name
       value: LevelTemplate

@@ -19,9 +19,13 @@ public class Switch : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        OnDiverClicked?.Invoke();
-        OnDiverClickedObject?.Invoke(this);
-        GetComponent<BoxCollider2D>().enabled = false;
+        if(other.GetComponent<Movement>()!=null)
+        {
+            OnDiverClicked?.Invoke();
+            OnDiverClickedObject?.Invoke(this);
+            GetComponent<BoxCollider2D>().enabled = false;
+        }
+
     }
 
     public void Reset()

@@ -29,8 +29,8 @@ public class LastPortback : MonoBehaviour
 
     public void PortBack()
     {
-        Submarine.Instance.transform.position = lastPortbackArea.SubmarineRespawn.position;
-        Diver.Instance.transform.position = lastPortbackArea.DiverRespawn.position;
+        if(Submarine.Instance != null) Submarine.Instance.transform.position = lastPortbackArea.SubmarineRespawn.position;
+        if(Diver.Instance != null) Diver.Instance.transform.position = lastPortbackArea.DiverRespawn.position;
     }
 
 }

@@ -10,6 +10,7 @@ public class SessionReadyCheck : MonoBehaviour
     public UnityEvent OnSessionPending;
     public UnityEvent<Vector3,Vector3> OnRejoin;
     public UnityEvent<SerializableList<string>> OnRejoinClamUpdate;
+    public UnityEvent<SerializableList<string>> OnRejoinGateUpdate;
     
     private string sessionID;
     public string SessionID
@@ -65,6 +66,7 @@ public class SessionReadyCheck : MonoBehaviour
 
         OnRejoin?.Invoke(submarinePosition, diverPosition);
         OnRejoinClamUpdate?.Invoke(sessionCheckFeedback.clamDataToUpdate);
+        OnRejoinGateUpdate?.Invoke(sessionCheckFeedback.gatesToUpdate);
 
         OnSessionReady?.Invoke();
     }

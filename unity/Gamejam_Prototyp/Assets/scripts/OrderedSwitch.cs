@@ -54,12 +54,13 @@ public class OrderedSwitch : GatePrecondition
 
     private void OnFalseGuess()
     {
-        foreach(Switch gameplaySwitch in requiredSwitchOrder)
+        OnFalseAttempt?.Invoke();
+
+        foreach (Switch gameplaySwitch in requiredSwitchOrder)
         {
             gameplaySwitch.Reset();
         }
 
-        OnFalseAttempt?.Invoke();
     }
 
 

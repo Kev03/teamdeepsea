@@ -13,4 +13,8 @@ public class PlayState
 
     public SerializableList<string> clamDataToUpdate = new SerializableList<string>();
 
+    public SerializableList<string> gatesToUpdate = new SerializableList<string>();
+
+    public SerializableList<MovingSyncdObjectWrapper> movingObjectsToUpdate = new SerializableList<MovingSyncdObjectWrapper>();
+
 }

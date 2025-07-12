@@ -42,7 +42,9 @@ public class PlaystateCommunication : MonoBehaviour
         Debug.Log("SENDING STUFF!");
         string playstateJSON = JsonUtility.ToJson(currentPlaystate);
 
-        string urlAppendix = $"?player_type={levelSetup.PlayerType}&session_id={levelSetup.SessionID}&message={playstateJSON}";
+        string deviceUniqueIdentifier = SystemInfo.deviceUniqueIdentifier;      
+
+        string urlAppendix = $"?player_type={levelSetup.PlayerType}&session_id={levelSetup.SessionID}&player_uid={deviceUniqueIdentifier}&message={playstateJSON}";
 
         OnSendGameState?.Invoke(urlAppendix);
 
@@ -53,6 +55,16 @@ public class PlaystateCommunication : MonoBehaviour
     {
         Debug.Log("Added to clamlist: " + serializableClamData);
         currentPlaystate.clamDataToUpdate.list.Add(serializableClamData.ID);
+    }
+
+    public void AddGateOpening(string gateID)
+    {
+        currentPlaystate.gatesToUpdate.list.Add(gateID);
+    }
+
+    public void SetMovingObjectData(SerializableList<MovingSyncdObjectWrapper> movingObjectData)
+    {
+        currentPlaystate.movingObjectsToUpdate = movingObjectData;
     }
 
 }

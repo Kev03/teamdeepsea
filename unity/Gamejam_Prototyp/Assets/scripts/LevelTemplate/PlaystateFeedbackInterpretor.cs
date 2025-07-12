@@ -9,6 +9,8 @@ public class PlaystateFeedbackInterpretor : MonoBehaviour
     public UnityEvent<DiverMessageWrapper> OnDiverMessage;
     public UnityEvent<SubmarineMessageWrapper> OnSubmarineMessage;
     public UnityEvent<SerializableList<string>> OnClamData;
+    public UnityEvent<SerializableList<string>> OnGateData;
+    public UnityEvent<SerializableList<MovingSyncdObjectWrapper>> OnMovingSyncdObjectData;
 
 
     private void Start()
@@ -26,8 +28,8 @@ public class PlaystateFeedbackInterpretor : MonoBehaviour
         Debug.Log("Playstate Feedback: " + feedback);
 
         PlayState playstate = JsonUtility.FromJson<PlayState>(feedback);
-        Debug.Log("DiverMessageWrapper: " + playstate.diverMessageWrapper.diverPosition);
-        Debug.Log("SubmarineMessageWrapper: " + playstate.submarineMessageWrapper.submarinePosition);
+
+        Debug.Log("MovingObjectsToUpdate: " + playstate.movingObjectsToUpdate.list.Count);
         /*
         foreach (string collectableId in playstate.clamDataToUpdate.list)
         {
@@ -37,6 +39,8 @@ public class PlaystateFeedbackInterpretor : MonoBehaviour
         OnDiverMessage?.Invoke(playstate.diverMessageWrapper);
         OnSubmarineMessage?.Invoke(playstate.submarineMessageWrapper);
         OnClamData?.Invoke(playstate.clamDataToUpdate);
+        OnGateData?.Invoke(playstate.gatesToUpdate);
+        OnMovingSyncdObjectData?.Invoke(playstate.movingObjectsToUpdate);
 
     }
 

@@ -32,6 +32,8 @@ public class SessionCheckFeedback
     }
 
     public SerializableList<string> clamDataToUpdate = new SerializableList<string>();
+    public SerializableList<string> gatesToUpdate = new SerializableList<string>();
+
 
     public SubmarineMessageWrapper GetSubmarineMessage() {
         SubmarineMessageWrapper message = JsonUtility.FromJson<SubmarineMessageWrapper>(submarineMsg);
